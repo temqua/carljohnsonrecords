@@ -10,19 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Compress build into .tgz file
-        run: mkdir -p release && tar --exclude=".[^/]*" -czf ./release/cj-release.tgz .
-
-      - name: Upload to production via SSH
-        uses: marcodallasanta/ssh-scp-deploy@v1.0.5
-        with:
-          local: ./release/cj-release.tgz
-          remote: /site/cj-release.tgz
-          host: ${{secrets.PROD_SERVER_HOST}}
-          user: ${{secrets.PROD_SERVER_USERNAME}}
-          key: ${{secrets.PROD_SERVER_KEY}}
-          post_upload: tar -xzf /site/cj-release.tgz .
-
       - name: Start docker
         uses: cross-the-world/ssh-pipeline@master
         with:
@@ -31,8 +18,9 @@ jobs:
           user: ${{ secrets.PROD_SERVER_USERNAME }}
           key: ${{ secrets.PROD_SERVER_KEY }}
           script: |
-            cd /site
+            cd ~/cj
+            git pull
             docker build -t cjsite  .
             docker stop cjsite || true
             docker rm cjsite || true
-            docker run -d -p 8080:8080 --name cjsite --restart always cjsite
+            docker run -d -p 8080:8080 --name cjsite cjsite
