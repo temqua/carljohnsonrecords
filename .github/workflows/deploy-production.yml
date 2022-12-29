@@ -6,16 +6,32 @@ on:
       - main
 
 jobs:
-  upload:
+  compress:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Compress build into .tgz file
         run: mkdir -p release && tar --exclude=".[^/]*" -czf ./release/cj-release.tgz .
+
+      - name: Download build
+        uses: actions/upload-artifact@v2
+        with:
+          name: cj-release
+          path: ./release/cj-release.tgz
+
+  upload:
+    needs: compress
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare build to upload
+        uses: actions/download-artifact@v2
+        with:
+          name: cj-release
 
       - name: upload to production via SSH
         uses: marcodallasanta/ssh-scp-deploy@v1.0.5
         with:
-          local: release/cj-release.tgz
+          local: cj-release.tgz
           remote: /site/cj-release.tgz
           host: ${{secrets.PROD_SERVER_HOST}}
           user: ${{secrets.PROD_SERVER_USERNAME}}
