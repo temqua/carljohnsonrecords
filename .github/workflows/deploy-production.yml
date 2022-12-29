@@ -18,7 +18,7 @@ jobs:
       - name: upload to production via SSH
         uses: marcodallasanta/ssh-scp-deploy@v1.0.5
         with:
-          local: cj-release.tgz
+          local: release/cj-release.tgz
           remote: /site/cj-release.tgz
           host: ${{secrets.PROD_SERVER_HOST}}
           user: ${{secrets.PROD_SERVER_USERNAME}}
