@@ -7,16 +7,16 @@ on:
 
 jobs:
   compress:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Compress build into .tgz file
         run: tar --exclude=".[^/]*" -czf ./cj-release.tgz .
 
   upload:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: upload to production via SSH
-      - uses: marcodallasanta/ssh-scp-deploy@v1.0.5
+        uses: marcodallasanta/ssh-scp-deploy@v1.0.5
         with:
           local: cj-release.tgz
           remote: /site/cj-release.tgz
@@ -27,7 +27,7 @@ jobs:
             rm /site/cj-release.tgz
 
       - name: start docker
-      - uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST_PROD }}
           username: ${{ secrets.SSH_USER_PROD }}
