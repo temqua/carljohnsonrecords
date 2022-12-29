@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Compress build into .tgz file
-        run: tar --exclude=".[^/]*" -czf ./cj-release.tgz .
+        run: mkdir -p release && tar --exclude=".[^/]*" -czf release/cj-release.tgz .
 
   upload:
     runs-on: ubuntu-latest
@@ -20,18 +20,18 @@ jobs:
         with:
           local: cj-release.tgz
           remote: /site/cj-release.tgz
-          host: ${{secrets.SSH_HOST_PROD}}
-          user: ${{secrets.SSH_USER_PROD}}
-          key: ${{secrets.SSH_PRIVATE_KEY_PROD}}
+          host: ${{secrets.PROD_SERVER_HOST}}
+          user: ${{secrets.PROD_SERVER_USERNAME}}
+          key: ${{secrets.PROD_SERVER_KEY}}
           post_upload: tar -xzf /site/cj-release.tgz . &&
             rm /site/cj-release.tgz
 
       - name: start docker
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST_PROD }}
-          username: ${{ secrets.SSH_USER_PROD }}
-          key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+          host: ${{ secrets.PROD_SERVER_HOST }}
+          username: ${{ secrets.PROD_SERVER_USERNAME }}
+          key: ${{ secrets.PROD_SERVER_KEY }}
           port: 22
           script_stop: true
           script: |
