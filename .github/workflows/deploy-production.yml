@@ -6,18 +6,7 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Compress build into .tgz file
-        run: mkdir -p release && tar --exclude=".[^/]*" -czf release/cj-release.tgz .
-      - name: Download build
-        uses: actions/upload-artifact@v2
-        with:
-          name: cj-release
-          path: ./cj-release.tgz
   upload:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Prepare build to upload
@@ -25,10 +14,13 @@ jobs:
         with:
           name: cj-release
 
+      - name: Compress build into .tgz file
+        run: mkdir -p release && tar --exclude=".[^/]*" -czf ./release/cj-release.tgz .
+
       - name: upload to production via SSH
         uses: marcodallasanta/ssh-scp-deploy@v1.0.5
         with:
-          local: cj-release.tgz
+          local: release/cj-release.tgz
           remote: /site/cj-release.tgz
           host: ${{secrets.PROD_SERVER_HOST}}
           user: ${{secrets.PROD_SERVER_USERNAME}}
