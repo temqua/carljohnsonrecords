@@ -13,28 +13,17 @@ jobs:
       - name: Compress build into .tgz file
         run: mkdir -p release && tar --exclude=".[^/]*" -czf ./release/cj-release.tgz .
 
-      - name: Download archive
-        uses: actions/upload-artifact@v2
-        with:
-          name: cj-release
-          path: ./release/cj-release.tgz
-
-      - name: Prepare archive to upload
-        uses: actions/download-artifact@v2
-        with:
-          name: cj-release
-
-      - name: upload to production via SSH
+      - name: Upload to production via SSH
         uses: marcodallasanta/ssh-scp-deploy@v1.0.5
         with:
-          local: cj-release.tgz
+          local: ./release/cj-release.tgz
           remote: /site/cj-release.tgz
           host: ${{secrets.PROD_SERVER_HOST}}
           user: ${{secrets.PROD_SERVER_USERNAME}}
           key: ${{secrets.PROD_SERVER_KEY}}
           post_upload: tar -xzf /site/cj-release.tgz .
 
-      - name: start docker
+      - name: Start docker
         uses: cross-the-world/ssh-pipeline@master
         with:
           host: ${{ secrets.PROD_SERVER_HOST }}
