@@ -9,7 +9,7 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Compress build into .tgz file
         run: mkdir -p release && tar --exclude=".[^/]*" -czf ./release/cj-release.tgz .
 
@@ -32,8 +32,7 @@ jobs:
           host: ${{secrets.PROD_SERVER_HOST}}
           user: ${{secrets.PROD_SERVER_USERNAME}}
           key: ${{secrets.PROD_SERVER_KEY}}
-          post_upload: tar -xzf /site/cj-release.tgz . &&
-            rm /site/cj-release.tgz
+          post_upload: tar -xzf /site/cj-release.tgz .
 
       - name: start docker
         uses: cross-the-world/ssh-pipeline@master
