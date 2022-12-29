@@ -15,7 +15,7 @@ jobs:
         with:
           host: ${{ secrets.PROD_SERVER_HOST }}
           port: 22
-          user: ${{ secrets.PROD_SERVER_USERNAME }}
+          username: ${{ secrets.PROD_SERVER_USERNAME }}
           key: ${{ secrets.PROD_SERVER_KEY }}
           script: |
             cd ~/cj
