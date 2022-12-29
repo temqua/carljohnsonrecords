@@ -9,10 +9,6 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - name: Prepare build to upload
-        uses: actions/download-artifact@v2
-        with:
-          name: cj-release
 
       - name: Compress build into .tgz file
         run: mkdir -p release && tar --exclude=".[^/]*" -czf ./release/cj-release.tgz .
