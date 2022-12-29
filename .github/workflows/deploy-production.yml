@@ -23,4 +23,4 @@ jobs:
             docker build -t cjsite  .
             docker stop cjsite || true
             docker rm cjsite || true
-            docker run -d -p 8080:8080 --name cjsite cjsite
+            docker run -d -p 5090:5090 cjsite
