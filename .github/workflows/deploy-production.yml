@@ -6,24 +6,20 @@ on:
       - main
 
 jobs:
-  compress:
+  upload:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Compress build into .tgz file
         run: mkdir -p release && tar --exclude=".[^/]*" -czf ./release/cj-release.tgz .
 
-      - name: Download build
+      - name: Download archive
         uses: actions/upload-artifact@v2
         with:
           name: cj-release
           path: ./release/cj-release.tgz
 
-  upload:
-    needs: compress
-    runs-on: ubuntu-latest
-    steps:
-      - name: Prepare build to upload
+      - name: Prepare archive to upload
         uses: actions/download-artifact@v2
         with:
           name: cj-release
