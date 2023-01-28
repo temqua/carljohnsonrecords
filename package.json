@@ -1,0 +1,22 @@
+{
+  "name": "carljohnsonrecords",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sirv public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temqua/carljohnsonrecords.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/temqua/carljohnsonrecords/issues"
+  },
+  "homepage": "https://github.com/temqua/carljohnsonrecords#readme",
+  "devDependencies": {
+    "sirv-cli": "^2.0.2"
+  }
+}
