@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "sirv public"
+    "start": "serve public"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/temqua/carljohnsonrecords#readme",
   "devDependencies": {
-    "sirv-cli": "^2.0.2"
+    "serve": "^14.2.0"
   }
 }
