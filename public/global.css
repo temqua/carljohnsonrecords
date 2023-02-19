@@ -34,6 +34,12 @@ body {
     font-size: 36px;
 }
 
+@-moz-document url-prefix() {
+    body {
+        font-size: 32px;
+    }
+}
+
 *:focus {
     outline: none;
 }
@@ -41,18 +47,28 @@ body {
 a,
 button {
     text-decoration: none;
-    text-transform: uppercase;
 }
 
-a:link {
-    color: white;
-}
-
-a:hover,
-a:focus,
-a:visited:hover {
+nav a:hover,
+nav a:focus,
+nav a:visited:hover {
     color: #c41111;
     transition: 0.8s;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:link,
+footer a:visited:hover,
+footer a:visited:focus {
+    transition: 0.8s;
+    color: rgb(5, 5, 255);
+}
+
+
+footer a:visited {
+    transition: 0.8s;
+    color: rgb(0, 0, 156);
 }
 
 #container {
@@ -92,6 +108,7 @@ nav {
 nav a {
     padding: 0.5em;
     color: white;
+    text-transform: uppercase;
 }
 
 #logo {
@@ -123,6 +140,7 @@ button {
             rgba(0, 0, 0, 0) 100%),
         #990e0e;
     color: white;
+    text-transform: uppercase;
     cursor: pointer;
 }
 
@@ -155,6 +173,10 @@ section {
 
 #request-link {
     text-align: center;
+}
+
+#studio {
+    text-align: justify;
 }
 
 #prices {
@@ -201,6 +223,17 @@ section {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+footer p {
+    background-color: black;
 }
 
 
@@ -266,6 +299,12 @@ section {
     background-image: url("/instagram-hover.svg");
 }
 
+@media all and (min-width: 768px) {
+    #logo {
+        min-height: 2.5em;
+    }
+}
+
 @media all and (max-width: 1024px) {
     body {
         font-size: 20px;
@@ -302,5 +341,6 @@ section {
 
     .price img {
         border-radius: 0;
+        width: 100%;
     }
 }

@@ -1,0 +1,12 @@
+services:
+
+    mongo:
+        image: mongo
+        container_name: mongodb
+        restart: on-failure
+        tty: true
+        ports:
+            - 27017:27017
+        volumes:
+            - mongodata:/data/db
+
