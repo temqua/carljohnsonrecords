@@ -10,9 +10,9 @@ nunjucks.configure('public', {
     express: app
 });
 app.get("/", async function (request, response, next) {
-  await db.connect(function (result) {
-    console.log("result: ", result)
-  });
+  // await db.connect(function (result) {
+  //   console.log("result: ", result)
+  // });
   response.render("index.html");
   next();
 });
