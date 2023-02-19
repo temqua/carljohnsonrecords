@@ -1,58 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml"/>
-    <link rel="stylesheet" href="global.css"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="global.css" />
     <title>CARL JOHNSON RECORDS</title>
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=en_RU" type="text/javascript"></script> -->
 </head>
 
 <body>
-<header>
-    <nav>
-        <a href="#" id="logo"> </a>
-        <a href="#main">
-            <div>главная</div>
-        </a>
-        <a href="#studio">
-            <div>О студии</div>
-        </a>
-        <a href="#pricelist">
-            <div>услуги и цены</div>
-        </a>
-        <a href="#contacts">
-            <div>контакты</div>
-        </a>
-        <div id="links">
-            <a href="https://vk.com/cj_rec" id="vk-link"></a>
-            <a href="https://t.me/grawler" id="tg-link"></a>
-        </div>
-    </nav>
-</header>
-<div id="container">
-    <section id="main">
-        <div id="main-logo"></div>
-        <a id="request-link" href="https://t.me/grawler">
-            <button>оставить заявку</button>
-        </a>
-    </section>
-    <!-- <section id="studio">
-      <h1>Студия</h1>
-      хорошая
-    </section>
-    <section id="pricelist">
-      <h1>Цены</h1>
-      Дорого
-    </section>
-    <section id="contacts">
-      <h1>контакты</h1>
-      пока
-    </section> -->
-</div>
-</body>
-<script>
+    <header>
+        <nav>
+            <a href="#" id="logo"> </a>
+            <a href="#main">
+                <div>главная</div>
+            </a>
+            <a href="#studio">
+                <div>О студии</div>
+            </a>
+            <a href="#pricelist">
+                <div>услуги и цены</div>
+            </a>
+            <a href="#contacts">
+                <div>контакты</div>
+            </a>
+            <div class="links">
+                <a href="tel:+79155938587" id="phone-link"></a>
+                <a href="https://vk.com/cj_rec" id="vk-link"></a>
+                <a href="https://t.me/grawler" id="tg-link"></a>
+                <a href="https://instagram.com/cj_rec" id="insta-link"></a>
+                <a href="mailto:cjrec@yandex.ru" id="email-link"></a>
+            </div>
+        </nav>
+    </header>
+    <div id="container">
+        <section id="main">
+            <div id="main-logo"></div>
+            <a id="request-link" href="#contacts">
+                <button>оставить заявку</button>
+            </a>
+        </section>
+        <section id="studio">
+            <h1>О студии</h1>
+            <p>
+                &emsp; CARL JOHNSON RECORDS это студия звукозаписи и репетиционная база, созданная в 2022 году
+                оказывающая
+                полный цикл услуг, помогающих воплотить в жизнь творческие идеи в любом жанре.
+            </p>
+            <p>
+                &emsp;Мы очень любим то, чем занимаемся и гарантируем что при работе на нашей студии мы вам поможем
+                воплотить
+                вашу задумку максимально качественно и в разумные сроки.
+            </p>
+            <p>
+                &emsp;Наша студия находится в городе Рязань, в 5 минутах ходьбы от Олимпийского Городка. Также на
+                территории
+                есть возможность бесплатно припарковать автомобиль на время работы в нашей студии.
+            </p>
+            <p>
+                &emsp;Для проведения репетиций в стенах нашей студии установлена акустическая система мощностью 2 кВт, в
+                сочетании с современным цифровым микшерным пультом с возможностью управления с планшета и подключения
+                персонального мониторинга. Все группы репетирующие у нас получают помощь в грамотной настройке звука на
+                репетициях, поэтому даже самые громкие группы гарантированно получают качественный и читаемый звук.
+            </p>
 
-</script>
+        </section>
+        <section id="pricelist">
+            <h1>Услуги и цены</h1>
+            <div id="prices">
+                <div class="price">
+                    <img src="rehearsal.png" alt="Band rehearsal">
+                    <h2>Репетиция группы</h2>
+                    <h1>350 ₽/ЧАС</h1>
+                </div>
+                <div class="price">
+                    <img src="instrumentrec.png" alt="Instrument or vocals recording services">
+                    <h2>Запись вокала/инструмента</h2>
+                    <h1>500 ₽/ЧАС</h1>
+                </div>
+                <div class="price">
+                    <img src="livesetrec.png" alt="Live set recording services">
+                    <h2>Запись группы лайвсетом</h2>
+                    <h1>750 ₽/ЧАС</h1>
+                </div>
+                <div class="price">
+                    <img src="mixing.png" alt="Mixing services">
+                    <h2>Сведение/мастеринг</h2>
+                    <h1>От 2000 ₽</h1>
+                </div>
+            </div>
+        </section>
+        <section id="contacts">
+            <h1>контакты</h1>
+            <!-- <div id="map" style="width: 600px; height: 400px"></div> -->
+            <div id="contacts-block">
+                <h2 id="address">г. Рязань, ул. Полевая, д.58</h2>
+                <div class="links">
+                    <a href="tel:+79155938587" id="phone-link"></a>
+                    <a href="https://vk.com/cj_rec" id="vk-link"></a>
+                    <a href="https://t.me/grawler" id="tg-link"></a>
+                    <a href="https://instagram.com/cj_rec" id="insta-link"></a>
+                    <a href="mailto:cjrec@yandex.ru" id="email-link"></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- <script>
+        ymaps3.ready.then(init);
+        function init() {
+          const map = new ymaps3.YMap(document.getElementById('map'), {
+            location: {
+              center: [37.64, 55.76],
+              zoom: 7
+            }
+          });
+        }
+      </script> -->
+</body>
+
 </html>

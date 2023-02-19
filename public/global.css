@@ -4,12 +4,33 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+    background-color: black;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #990e0e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7a0c0c;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #550707;
+}
+
 body {
     width: 100%;
     min-height: 100%;
     height: 100%;
     margin: 0;
-    transition-duration: .4s;
+    transition-duration: 0.4s;
     font-size: 36px;
 }
 
@@ -28,6 +49,7 @@ a:link {
 }
 
 a:hover,
+a:focus,
 a:visited:hover {
     color: #c41111;
     transition: 0.8s;
@@ -38,6 +60,8 @@ a:visited:hover {
     flex-direction: column;
     align-items: stretch;
     font-family: Poppins, Avenir, Helvetica, Arial, sans-serif;
+    background-color: black;
+    color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -48,8 +72,12 @@ a:visited:hover {
     align-items: center;
     flex-direction: column;
     padding-top: 0.5em;
-    background-image: url("/logo.png");
+    background-image: linear-gradient(359.17deg,
+            #000000 0.74%,
+            rgba(0, 0, 0, 0.16) 99.32%),
+        url("/logo.png");
     background-size: 100%;
+    background-repeat: no-repeat;
     min-height: 92vh;
     width: 100%;
 }
@@ -76,7 +104,7 @@ nav a {
 }
 
 #main-logo {
-    background-image: url('/cj-logo.svg');
+    background-image: url("/cj-logo.svg");
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,44 +115,155 @@ nav a {
 button {
     height: 3em;
     padding: 0.5em 2em;
+    border: 0;
     border-radius: 5em;
     font-size: 1em;
-    background-color: #990e0e;
+    background: linear-gradient(360deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0) 100%),
+        #990e0e;
     color: white;
     cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(360deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0) 100%),
+        #7a0c0c;
+    transition: 0.4s;
+}
+
+button:active {
+    background: linear-gradient(360deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0) 100%),
+        #550707;
+    transition: 0.4s;
+}
+
+section>h1 {
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+section {
+    padding: 1em;
 }
 
 #request-link {
     text-align: center;
 }
 
-#vk-link {
-    background-image: url('/vk.svg');
-    margin-right: 15px;
+#prices {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    text-transform: uppercase;
+    min-height: 550px;
+    text-align: center;
 }
 
-#tg-link {
-    background-image: url('/tg.svg');
+.price {
+    padding: 1.2em 1em;
+    justify-items: center;
+    border-radius: 0.5em;
+    background-color: #1a1a1a;
 }
 
-#links {
-    display: flex;
+.price img {
+    border-radius: 0.4em;
+}
+
+.price>h2 {
+    font-size: 0.6em;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.links {
+    display: inline-flex;
+    gap: 0.5em;
     padding: 0.5em;
+    min-height: 80px;
 }
 
-#links a {
+.links a {
     display: inline-block;
+    min-width: 1em;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-#tg-link:hover {
-    background-image: url('/tg-hover.svg');
+
+#contacts-block {
+    display: grid;
+    justify-content: center;
 }
 
-#vk-link:hover {
-    background-image: url('/vk-hover.svg');
+#contacts-block .links a {
+    min-width: 2em;
+    min-height: 80px;
+}
+
+#address {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#vk-link {
+    background-image: url("/vk.svg");
+}
+
+#tg-link {
+    background-image: url("/tg.svg");
+}
+
+#insta-link {
+    background-image: url("/instagram.svg");
+}
+
+#email-link {
+    background-image: url("/email.svg");
+}
+
+#phone-link {
+    background-image: url("/phone.svg");
+}
+
+#phone-link:hover,
+#phone-link:focus {
+    background-image: url("/phone-hover.svg");
+}
+
+#email-link:hover,
+#email-link:focus {
+    background-image: url("/email-hover.svg");
+}
+
+
+#tg-link:hover,
+#tg-link:focus {
+    background-image: url("/tg-hover.svg");
+}
+
+#vk-link:hover,
+#vk-link:focus {
+    background-image: url("/vk-hover.svg");
+}
+
+#insta-link:hover,
+#insta-link:focus {
+    background-image: url("/instagram-hover.svg");
 }
 
 @media all and (max-width: 1024px) {
@@ -151,5 +290,17 @@ button {
 
     #main {
         min-height: 70vh;
+    }
+
+    #prices {
+        grid-template-columns: 1fr;
+    }
+
+    .price {
+        padding: 0;
+    }
+
+    .price img {
+        border-radius: 0;
     }
 }
