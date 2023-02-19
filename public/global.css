@@ -58,18 +58,17 @@ nav a:visited:hover {
 
 footer a:hover,
 footer a:focus,
-footer a:link,
 footer a:visited:hover,
 footer a:visited:focus {
     transition: 0.8s;
-    color: rgb(5, 5, 255);
+    color: white;
 }
 
-
+footer a:link,
 footer a:visited {
-    transition: 0.8s;
-    color: rgb(0, 0, 156);
+    color: #c41111;
 }
+
 
 #container {
     display: flex;

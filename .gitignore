@@ -166,4 +166,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-public/global.css
+dist/
