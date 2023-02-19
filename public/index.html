@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="global.css" />
     <title>CARL JOHNSON RECORDS</title>
-    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=en_RU" type="text/javascript"></script> -->
 </head>
 
 <body>
@@ -95,35 +94,31 @@
         </section>
         <section id="contacts">
             <h1>контакты</h1>
-            <!-- <div id="map" style="width: 600px; height: 400px"></div> -->
             <div id="contacts-block">
-                <h2 id="address">г. Рязань, ул. Полевая, д.58</h2>
-                <div class="links">
-                    <a href="tel:+79155938587" id="phone-link"></a>
-                    <a href="https://vk.com/cj_rec" id="vk-link"></a>
-                    <a href="https://t.me/grawler" id="tg-link"></a>
-                    <a href="https://instagram.com/cj_rec" id="insta-link"></a>
-                    <a href="mailto:cjrec@yandex.ru" id="email-link"></a>
+                <div>
+                    <iframe id="map" src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=226912412712"
+                        frameborder="0"></iframe>
                 </div>
+                <div>
+                    <h2 id="address">г. Рязань, ул. Полевая, д.58</h2>
+                    <div class="links">
+                        <a href="tel:+79155938587" id="phone-link"></a>
+                        <a href="https://vk.com/cj_rec" id="vk-link"></a>
+                        <a href="https://t.me/grawler" id="tg-link"></a>
+                        <a href="https://instagram.com/cj_rec" id="insta-link"></a>
+                        <a href="mailto:cjrec@yandex.ru" id="email-link"></a>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>
     <footer>
         © 2023 All Rights Reserved.
-        <p>Designed by <a href="https://t.me/grawler">Kirill</a>. Developed by <a href="https://temqua.github.io">Artem</a>. </p>
+        <p>Designed by <a href="https://t.me/grawler">Kirill</a>. Developed by <a
+                href="https://temqua.github.io">Artem</a>. </p>
         <p>* Instagram — проект Meta Platforms Inc., деятельность которой в России запрещена.</p>
     </footer>
-    <!-- <script>
-        ymaps3.ready.then(init);
-        function init() {
-          const map = new ymaps3.YMap(document.getElementById('map'), {
-            location: {
-              center: [37.64, 55.76],
-              zoom: 7
-            }
-          });
-        }
-      </script> -->
 </body>
 
 </html>

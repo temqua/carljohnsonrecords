@@ -165,6 +165,8 @@ section>h1 {
     text-align: center;
     font-size: 1.5em;
     text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-top: 0;
 }
 
 section {
@@ -226,20 +228,26 @@ section {
 }
 
 footer {
+    padding-bottom: 1em;
+    font-size: 0.6em;
+    text-align: center;
     background-color: black;
     color: white;
-    text-align: center;
-    padding-bottom: 1em;
 }
 
 footer p {
     background-color: black;
 }
 
+#map {
+    width: 560px;
+    height: 400px;
+}
 
 #contacts-block {
     display: grid;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr;    
+    justify-items: center;
 }
 
 #contacts-block .links a {
@@ -343,4 +351,14 @@ footer p {
         border-radius: 0;
         width: 100%;
     }
+
+    #contacts-block {
+        display: grid;
+        grid-template-columns: 1fr;    
+    }
+
+    #map {
+        width: 95vw;
+    }
+    
 }
