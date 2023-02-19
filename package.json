@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cp public/* dist && npx postcss public/global.css > dist/global.css",
+    "build": "mkdir -p dist && cp public/* dist && npx postcss public/global.css > dist/global.css",
     "debug-site": "serve public",
     "debug-server": "nodemon src/server.js",
     "prestart": "npm run build",
@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "express3-handlebars": "^0.5.2",
     "mongodb": "^5.0.1"
   }
 }
