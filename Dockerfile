@@ -1,7 +1,8 @@
-FROM nginx:latest
+FROM node:18-slim AS build
 WORKDIR /site
-COPY public/* ./
-COPY nginx.conf nginx.conf
+COPY . .
 COPY ./nginx.conf /etc/nginx/nginx.conf
+RUN npm ci
 EXPOSE 5090
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
+
