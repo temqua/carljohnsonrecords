@@ -6,9 +6,8 @@
   "scripts": {
     "build": "mkdir -p dist && cp public/* dist && npx postcss public/global.css > dist/global.css",
     "debug-site": "serve public",
-    "debug-server": "nodemon src/server.js",
     "prestart": "npm run build",
-    "start": "node src/server.js"
+    "start": "serve dist -p 5090"
   },
   "repository": {
     "type": "git",
@@ -23,13 +22,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.15",
-    "nodemon": "^2.0.20",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "serve": "^14.2.0"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongodb": "^5.0.1"
   }
 }

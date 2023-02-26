@@ -1,12 +1,32 @@
 services:
 
-    mongo:
-        image: mongo
-        container_name: mongodb
-        restart: on-failure
-        tty: true
-        ports:
-            - 27017:27017
-        volumes:
-            - mongodata:/data/db
+    # mongodb_container:
+    #     image: mongo:latest
+    #     container_name: mongodb-production
+    #     restart: unless-stopped
+    #     tty: true 
+    #     stdin_open: true 
+    #     ports:
+    #         - 27018:27017
+    #     environment:
+    #         MONGO_DB_ADMIN_USERNAME: admin
+    #         MONGO_DB_ADMIN_PASSWORD: admin
+    #     env_file:
+    #         - .env.production
+    #     volumes:
+    #         - mongodata:/data/db
+    #         - ./mongod.conf:/etc/mongod.conf
+    #         - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro         
+    #     command: "mongod --config /etc/mongod.conf --port 27018"
 
+    cjsite:
+        build:
+            context: .
+        container_name: cj-production
+        ports:
+            - 5090:5090
+        restart: unless-stopped
+
+volumes:
+    mongodata:
+        
