@@ -1,29 +1,51 @@
 {
-  "name": "carljohnsonrecords",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "mkdir -p dist && cp public/* dist && npx postcss public/global.css > dist/global.css",
-    "debug-site": "serve public",
-    "prestart": "npm run build",
-    "start": "serve dist -p 5090"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/temqua/carljohnsonrecords.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/temqua/carljohnsonrecords/issues"
-  },
-  "homepage": "https://github.com/temqua/carljohnsonrecords#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "cssnano": "^5.1.15",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0",
-    "serve": "^14.2.0"
-  }
+	"name": "carljohnsonrecords",
+	"version": "1.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"start": "serve build -p 5090",
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/temqua/carljohnsonrecords.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/temqua/carljohnsonrecords/issues"
+	},
+	"homepage": "https://github.com/temqua/carljohnsonrecords#readme",
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-static": "^2.0.1",
+		"@sveltejs/kit": "^1.5.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^5.1.15",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"postcss": "^8.4.21",
+		"postcss-cli": "^10.1.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"serve": "^14.2.0",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.3",
+		"vite": "^4.0.0"
+	},
+	"dependencies": {
+		"mongodb": "^5.1.0"
+	}
 }

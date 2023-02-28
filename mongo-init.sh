@@ -22,5 +22,4 @@ db.createUser({
   }]
 })
 db.createCollection('general')
-db.createCollection('prices')
 EOF
