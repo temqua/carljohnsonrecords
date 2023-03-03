@@ -14,7 +14,7 @@ db.createUser({
 });
 use cjsite;
 db.createUser({
-  user: 'cj',
+  user: '$MONGO_DB_USERNAME',
   pwd: '$MONGO_DB_PASSWORD',
   roles: [{
     role: "readWrite",
