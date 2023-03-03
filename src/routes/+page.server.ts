@@ -1,8 +1,7 @@
 import Db from '$lib/server/db';
 import type { PageServerLoad } from './$types';
-
 export const load = (async () => {
-	return {
-		prices: await Db.getCollection('general')
-	};
+	const prices = await Db.getCollection('prices');
+	const general = await Db.getCollection('general');
+	return { prices, general };
 }) satisfies PageServerLoad;

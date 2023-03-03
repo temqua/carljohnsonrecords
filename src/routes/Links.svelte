@@ -1,3 +1,5 @@
+<script>
+</script>
 <div class="links">
 	<a target="_blank" rel="noreferrer" href="tel:+79155938587" class="phone-link" />
 	<a target="_blank" rel="noreferrer" href="https://vk.com/cj_rec" class="vk-link" />

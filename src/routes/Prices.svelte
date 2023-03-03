@@ -1,33 +1,9 @@
-<script>
+<script lang="ts">
+	import type { Price } from "../models/price"
 	export let pricesHeader = 'Услуги и цены';
-	export let prices = [
-		{
-			price: 350,
-			title: 'Репетиция группы',
-			src: 'rehearsal.png',
-			alt: 'Band rehearsal'
-		},
-		{
-			price: 500,
-			title: 'Запись вокала/инструмента',
-			src: 'instrumentrec.png',
-			alt: 'Instrument or vocals recording services'
-		},
-		{
-			price: 750,
-			title: 'Запись группы лайвсетом',
-			src: 'livesetrec.png',
-			alt: 'Live set recording services'
-		},
-		{
-			price: 2000,
-			title: 'Сведение/мастеринг',
-			src: 'mixing.png',
-			alt: 'Mixing services'
-		}
-	];
+	export let prices: Price[];
 </script>
-
+{#if prices && prices.length}
 <section id="pricelist">
 	<h1>{pricesHeader}</h1>
 	<div id="prices">
@@ -40,6 +16,7 @@
 		{/each}
 	</div>
 </section>
+{/if}
 
 <style>
 	#prices {

@@ -1,6 +1,10 @@
-<script>
+<script lang="ts">
+	import type { Price } from "../models/price"
 	import Links from './Links.svelte';
 	import Prices from './Prices.svelte';
+	export let data;
+	let prices: Price[] = data.prices;
+	let general = data.general;
 </script>
 
 <section id="main">
@@ -31,7 +35,7 @@
 		получают качественный и читаемый звук.
 	</p>
 </section>
-<Prices />
+<Prices {prices} />
 <section id="contacts">
 	<h1>контакты</h1>
 	<div id="contacts-block">
