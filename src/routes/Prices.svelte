@@ -1,22 +1,23 @@
 <script lang="ts">
-	import type { Price } from "../models/price"
+	import type { Price } from '../models/price';
 	export let pricesHeader = 'Услуги и цены';
 	export let prices: Price[];
 </script>
-{#if prices && prices.length}
+
 <section id="pricelist">
-	<h1>{pricesHeader}</h1>
-	<div id="prices">
-		{#each prices as price}
-			<div class="price">
-				<img src={price.src} alt={price.alt} />
-				<h2>{price.title}</h2>
-				<h1>{price.price} ₽/ЧАС</h1>
-			</div>
-		{/each}
-	</div>
+	{#if prices && prices.length}
+		<h1>{pricesHeader}</h1>
+		<div id="prices">
+			{#each prices as price}
+				<div class="price">
+					<img src={price.src} alt={price.alt} />
+					<h2>{price.title}</h2>
+					<h1>{price.price} ₽/ЧАС</h1>
+				</div>
+			{/each}
+		</div>
+	{/if}
 </section>
-{/if}
 
 <style>
 	#prices {
