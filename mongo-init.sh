@@ -3,7 +3,7 @@
 set -e
 
 mongosh <<EOF
-use admin
+use admin;
 db.createUser({
   user: '$MONGO_DB_ADMIN_USERNAME',
   pwd: '$MONGO_DB_ADMIN_PASSWORD',
@@ -11,21 +11,22 @@ db.createUser({
     role: "userAdminAnyDatabase",
     db: "admin"
   }]
-})
-use cjsite
+});
+use cjsite;
 db.createUser({
   user: 'cj',
   pwd: '$MONGO_DB_PASSWORD',
   roles: [{
     role: "readWrite",
-    db: "db"
+    db: "cjsite"
   }]
-})
-db.createCollection('general')
+});
+use cjsite;
+db.createCollection('general');
 db.general.insert({
   pricesHeader: 'Услуги и цены'
-})
-db.createCollection('prices')
+});
+db.createCollection('prices');
 db.prices.insert( [
 		{
 			price: 350,
@@ -51,5 +52,5 @@ db.prices.insert( [
 			src: 'mixing.png',
 			alt: 'Mixing services'
 		}
-])
+]);
 EOF
