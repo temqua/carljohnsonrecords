@@ -1,22 +1,50 @@
 <script lang="ts">
 	import type { Price } from '../models/price';
 	export let pricesHeader = 'Услуги и цены';
+	const defaultPrices: Price[] = [
+		{
+			price: 350,
+			title: 'Репетиция группы',
+			src: 'rehearsal.png',
+			alt: 'Band rehearsal'
+		},
+		{
+			price: 500,
+			title: 'Запись вокала/инструмента',
+			src: 'instrumentrec.png',
+			alt: 'Instrument or vocals recording services'
+		},
+		{
+			price: 750,
+			title: 'Запись группы лайвсетом',
+			src: 'livesetrec.png',
+			alt: 'Live set recording services'
+		},
+		{
+			price: 2000,
+			title: 'Сведение/мастеринг',
+			src: 'mixing.png',
+			alt: 'Mixing services'
+		}
+	]
 	export let prices: Price[];
+
+	$: if (!prices || !prices.length) {
+		prices = defaultPrices;
+	}
 </script>
 
 <section id="pricelist">
-	{#if prices && prices.length}
-		<h1>{pricesHeader}</h1>
-		<div id="prices">
-			{#each prices as price}
-				<div class="price">
-					<img src={price.src} alt={price.alt} />
-					<h2>{price.title}</h2>
-					<h1>{price.price} ₽/ЧАС</h1>
-				</div>
-			{/each}
-		</div>
-	{/if}
+	<h1>{pricesHeader}</h1>
+	<div id="prices">
+		{#each prices as price}
+			<div class="price">
+				<img src={price.src} alt={price.alt} />
+				<h2>{price.title}</h2>
+				<h1>{price.price} ₽/ЧАС</h1>
+			</div>
+		{/each}
+	</div>
 </section>
 
 <style>
