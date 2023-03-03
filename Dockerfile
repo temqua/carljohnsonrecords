@@ -6,4 +6,3 @@ RUN npm ci
 RUN npm run build
 EXPOSE 5090
 CMD ["npm", "start"]
-

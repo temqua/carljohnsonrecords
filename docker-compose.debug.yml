@@ -6,13 +6,13 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - 27017:27017
+      - 27018:27017
     env_file:
-      - .env.production
+      - .env.development
     volumes:
-      - mongodata:/data/db
-      - ./mongod.conf:/etc/mongod.conf
+      - mongodatadev:/data/db
       - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+      - ./mongod.dev.conf:/etc/mongod.conf
     command: 'mongod --config /etc/mongod.conf'
 
   cjsite:
@@ -24,3 +24,6 @@ services:
     ports:
       - 5090:5090
       - 9229:9229
+
+volumes:
+  mongodatadev:
