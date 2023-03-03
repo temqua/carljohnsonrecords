@@ -10,9 +10,9 @@ services:
     env_file:
       - .env.development
     volumes:
-      - mongodatadev:/data/db
+      - mongodata:/data/db
       - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
-      - ./mongod.dev.conf:/etc/mongod.conf
+      - ./mongod.conf:/etc/mongod.conf
     command: 'mongod --config /etc/mongod.conf'
 
   cjsite:
@@ -24,6 +24,8 @@ services:
     ports:
       - 5090:5090
       - 9229:9229
+    depends_on:
+      - mongodb_container
 
 volumes:
-  mongodatadev:
+  mongodata:

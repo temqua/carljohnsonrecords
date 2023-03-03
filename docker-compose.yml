@@ -25,6 +25,8 @@ services:
     ports:
       - 5090:5090
     restart: unless-stopped
+    depends_on:
+      - mongodb_container
 
 volumes:
   mongodata:
