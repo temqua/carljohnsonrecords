@@ -18,9 +18,6 @@ jobs:
           username: ${{ secrets.PROD_SERVER_USERNAME }}
           key: ${{ secrets.PROD_SERVER_KEY }}
           script: |
-            cd ~/cj
+            cd /site/cj
             git pull
-            docker build -t cjsite  .
-            docker stop cjsite || true
-            docker rm cjsite || true
-            docker run -d -p 5090:5090 --name cjsite cjsite
+            docker-compose up --build -d
