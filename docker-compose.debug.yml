@@ -1,0 +1,26 @@
+services:
+  mongodb_container:
+    image: mongo:latest
+    container_name: mongodb-production
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - 27017:27017
+    env_file:
+      - .env.production
+    volumes:
+      - mongodata:/data/db
+      - ./mongod.conf:/etc/mongod.conf
+      - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+    command: 'mongod --config /etc/mongod.conf'
+
+  cjsite:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 5090:5090
+      - 9229:9229

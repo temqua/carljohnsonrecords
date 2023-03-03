@@ -18,6 +18,9 @@ services:
   cjsite:
     build:
       context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
     container_name: cj-production
     ports:
       - 5090:5090
