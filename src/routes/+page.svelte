@@ -1,20 +1,21 @@
 <script lang="ts">
-	import type { Price } from "../models/price"
+	import type { Price } from '../models/price';
+	import type { General } from '../models/general';
 	import Links from './Links.svelte';
 	import Prices from './Prices.svelte';
 	export let data;
-	let prices: Price[] = data.prices;
-	let general = data.general;
+	const general: General = data.general;
+	const prices: Price[] = general?.prices;
 </script>
 
 <section id="main">
 	<div id="main-logo" />
 	<a class="text-center" href="#contacts">
-		<button>Связаться</button>
+		<button>{general?.buttonText ?? 'Связаться'}</button>
 	</a>
 </section>
 <section id="studio" class="text-justify">
-	<h1>О студии</h1>
+	<h1>{general?.headers?.studio ?? 'О студии'}</h1>
 	<p>
 		&emsp; CARL JOHNSON RECORDS это студия звукозаписи и репетиционная база, созданная в 2022 году
 		оказывающая полный цикл услуг, помогающих воплотить в жизнь творческие идеи в любом жанре.
@@ -35,9 +36,9 @@
 		получают качественный и читаемый звук.
 	</p>
 </section>
-<Prices {prices} />
+<Prices {prices} header={general?.headers?.prices} />
 <section id="contacts">
-	<h1>контакты</h1>
+	<h1>{general?.headers?.contacts ?? 'контакты'}</h1>
 	<div id="contacts-block">
 		<div>
 			<iframe
@@ -49,7 +50,7 @@
 		</div>
 		<div>
 			<h2 id="address" class="uppercase text-center">г. Рязань, ул. Полевая, д.58</h2>
-			<Links />
+			<Links links={general?.links} />
 		</div>
 	</div>
 </section>
