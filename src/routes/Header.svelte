@@ -4,7 +4,7 @@
 
 <header>
 	<nav>
-		<a href="#" id="logo" />
+		<a id="logo" href="/"></a>
 		<a href="#studio">
 			<div>О студии</div>
 		</a>

@@ -1,12 +1,40 @@
-<script>
+<script lang="ts">
+	import type { Link } from '../models/link';
+	export let links: Link[];
+	const defaultLinks: Link[] = [
+		{
+			class: 'phone-link',
+			href: 'tel:+79155938587'
+		},
+		{
+			class: 'vk-link',
+			href: 'https://vk.com/cj_rec'
+		},
+		{
+			class: 'tg-link',
+			href: 'https://t.me/grawler'
+		},
+		{
+			class: 'insta-link',
+			href: 'https://instagram.com/cj_rec'
+		},
+		{
+			class: 'email-link',
+			href: 'mailto:cjrec@yandex.ru'
+		}
+	];
+	$: if (!links) {
+		links = defaultLinks;
+	}
 </script>
-<div class="links">
-	<a target="_blank" rel="noreferrer" href="tel:+79155938587" class="phone-link" />
-	<a target="_blank" rel="noreferrer" href="https://vk.com/cj_rec" class="vk-link" />
-	<a target="_blank" rel="noreferrer" href="https://t.me/grawler" class="tg-link" />
-	<a target="_blank" rel="noreferrer" href="https://instagram.com/cj_rec" class="insta-link" />
-	<a target="_blank" rel="noreferrer" href="mailto:cjrec@yandex.ru" class="email-link" />
-</div>
+
+{#if links && links.length}
+	<div class="links">
+		{#each links as link}
+			<a target="_blank" rel="noreferrer" href="{link.href}" class="{link.class}" />
+		{/each}
+	</div>
+{/if}
 
 <style>
 	.links {

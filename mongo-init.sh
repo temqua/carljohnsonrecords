@@ -21,13 +21,37 @@ db.createUser({
     db: "cjsite"
   }]
 });
-use cjsite;
 db.createCollection('general');
-db.general.insert({
-  pricesHeader: 'Услуги и цены'
-});
-db.createCollection('prices');
-db.prices.insert( [
+db.general.insertOne({
+  	headers: {
+		studio: 'О студии',
+		prices: 'Услуги и цены',
+		contacts: 'Контакты',
+	},
+  	buttonText: 'Связаться',
+  	links: [
+		{
+			class: 'phone-link',
+			href: 'tel:+79155938587'
+		},
+		{
+			class: 'vk-link',
+			href: 'https://vk.com/cj_rec'
+		},
+		{
+			class: 'tg-link',
+			href: 'https://t.me/grawler'
+		},
+		{
+			class: 'insta-link',
+			href: 'https://instagram.com/cj_rec'
+		},
+		{
+			class: 'email-link',
+			href: 'mailto:cjrec@yandex.ru'
+		}
+	],
+	prices: [
 		{
 			price: 350,
 			title: 'Репетиция группы',
@@ -52,5 +76,6 @@ db.prices.insert( [
 			src: 'mixing.png',
 			alt: 'Mixing services'
 		}
-]);
+	]
+});
 EOF

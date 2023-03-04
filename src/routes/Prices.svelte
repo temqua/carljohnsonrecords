@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Price } from '../models/price';
-	export let pricesHeader = 'Услуги и цены';
+	export let header = 'Услуги и цены';
 	const defaultPrices: Price[] = [
 		{
 			price: 350,
@@ -35,7 +35,7 @@
 </script>
 
 <section id="pricelist">
-	<h1>{pricesHeader}</h1>
+	<h1>{header ?? 'Услуги и цены'}</h1>
 	<div id="prices">
 		{#each prices as price}
 			<div class="price">

@@ -1,8 +1,8 @@
 <footer>
 	Copyright © {new Date().getFullYear()} All Rights Reserved.
 	<p>
-		Designed by <a href="https://t.me/grawler">Kirill</a>. Developed by
-		<a href="https://temqua.github.io">Artem</a>.
+		Designed by <a target="_blank" href="https://t.me/grawler">Kirill</a>. Developed by
+		<a target="_blank" href="https://temqua.github.io">Artem</a>.
 	</p>
 	<p>* Instagram — проект Meta Platforms Inc., деятельность которой в России запрещена.</p>
 </footer>
