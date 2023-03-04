@@ -3,10 +3,8 @@ services:
     image: mongo:latest
     container_name: mongodb-production
     restart: unless-stopped
-    tty: true
     stdin_open: true
-    ports:
-      - 27018:27017
+    network_mode: host
     env_file:
       - .env.development
     volumes:
@@ -21,9 +19,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: development
-    ports:
-      - 5090:5090
-      - 9229:9229
+    network_mode: host
     depends_on:
       - mongodb_container
 

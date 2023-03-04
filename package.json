@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node -r dotenv/config build",
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "vite build --mode production",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
