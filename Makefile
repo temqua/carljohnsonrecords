@@ -1,5 +1,6 @@
 deploy:
-	docker-compose up --build -d 
+	docker-compose build --no-cache
+	docker-compose up -d 
 
 delete:
 	docker-compose down -v
