@@ -5,7 +5,6 @@ services:
     image: mongo:latest
     container_name: mongodb-production
     restart: unless-stopped
-    stdin_open: true
     network_mode: host
     env_file:
       - .env
@@ -20,17 +19,17 @@ services:
       timeout: 10s
       retries: 5
       start_period: 40s
-
+      
   cjsite:
     build:
       context: .
-      dockerfile: ./Dockerfile
       network: host
-    environment:
-      NODE_ENV: production
     container_name: cj-production
     network_mode: host
     restart: unless-stopped
+    depends_on:
+      mongodb_container: 
+        condition: service_started
 
 volumes:
   mongodata:

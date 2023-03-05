@@ -1,8 +1,6 @@
 import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
-dotenv.config();
 export async function getCollection(name: string): Promise<any> {
-	const connectionString = process ? process.env.DB_URI : import.meta.env.VITE_DB_URI;
+	const connectionString = import.meta.env.VITE_DB_URI;
 	const client = new MongoClient(connectionString);
 	try {
 		await client.connect();
