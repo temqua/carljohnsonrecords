@@ -14,6 +14,12 @@ services:
       - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
       - ./mongod.conf:/etc/mongod.conf
     command: 'mongod --config /etc/mongod.conf'
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/cjsite --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
 
   cjsite:
     build:
@@ -25,8 +31,6 @@ services:
     container_name: cj-production
     network_mode: host
     restart: unless-stopped
-    depends_on:
-      - mongodb_container
 
 volumes:
   mongodata:

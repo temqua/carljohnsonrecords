@@ -3,7 +3,8 @@
 	import type { General } from '../models/general';
 	import Links from './Links.svelte';
 	import Prices from './Prices.svelte';
-	export let data;
+	import type { PageData } from './$types';
+	export let data: PageData;
 	const general: General = data.general;
 	const prices: Price[] = general?.prices;
 </script>
