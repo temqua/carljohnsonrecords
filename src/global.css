@@ -102,3 +102,7 @@ section {
 .uppercase {
 	text-transform: uppercase;
 }
+
+.flex {
+	display: flex;
+}

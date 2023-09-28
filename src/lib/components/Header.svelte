@@ -1,20 +1,14 @@
-<script>
-	import Links from '$lib/components/Links.svelte';
-</script>
-
 <header>
 	<nav>
 		<a id="logo" href="/" />
-		<a href="#studio">
-			<div>О студии</div>
-		</a>
-		<a href="#pricelist">
-			<div>услуги</div>
-		</a>
-		<a href="#contacts">
-			<div>контакты</div>
-		</a>
-		<Links />
+		<div class="flex">
+			<a href="#studio">
+				<div>О нас</div>
+			</a>
+			<a href="#contacts">
+				<div>контакты</div>
+			</a>
+		</div>
 	</nav>
 </header>
 
@@ -24,7 +18,8 @@
 		background-size: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
-		height: 100%;
+		width: 518px;
+		height: 29px;
 		margin: 0 0.5em;
 
 		@media all and (min-width: 768px) {
@@ -39,8 +34,8 @@
 	}
 
 	nav {
-		display: grid;
-		grid-template-columns: 1.8fr 0.8fr 1.2fr 1fr 0.8fr;
+		display: flex;
+		justify-content: space-between;
 		align-items: center;
 		background-color: black;
 

@@ -43,7 +43,6 @@
 		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 		gap: 1em;
 		text-transform: uppercase;
-		min-height: 550px;
 		text-align: center;
 
 		@media all and (max-width: 1024px) {

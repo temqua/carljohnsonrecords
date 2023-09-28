@@ -6,7 +6,7 @@
 <section id="main">
 	<div id="main-logo" />
 	<a class="text-center" href="#contacts">
-		<button>Связаться</button>
+		<img src="/arrow-down.svg" alt="" />
 	</a>
 </section>
 <section id="studio" class="text-justify">
@@ -34,7 +34,7 @@
 <Services />
 <section id="contacts">
 	<h1>Контакты</h1>
-	<div id="contacts-block">
+	<div id="contacts-container">
 		<div>
 			<iframe
 				id="map"
@@ -43,9 +43,18 @@
 				title="map"
 			/>
 		</div>
-		<div>
-			<h2 id="address" class="uppercase text-center">г. Рязань, ул. Полевая, д.58</h2>
+		<div id="contacts-links">
+			<h1 id="address" class="contact uppercase text-center">г. Рязань, ул. Полевая, д.58</h1>
 			<Links />
+			<div>
+				<a href="tel:+79155938587" class="contact uppercase text-cetner">+7 915 593 85 87</a>
+			</div>
+			<div>
+				<a href="tel:+79537372555" class="contact uppercase text-cetner">+7 953 737 25 55</a>
+			</div>
+			<div>
+				<a href="mailto:cj.rec@ya.ru" class="contact uppercase text-cetner">cj.rec@ya.ru</a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -58,7 +67,7 @@
 		flex-direction: column;
 		padding-top: 0.5em;
 		background-image: linear-gradient(359.17deg, #000000 0.74%, rgba(0, 0, 0, 0.16) 99.32%),
-			url('/logo.png');
+			url('/logo1.png');
 		background-size: 100%;
 		background-repeat: no-repeat;
 		min-height: 92vh;
@@ -76,43 +85,61 @@
 		background-repeat: no-repeat;
 		height: 9em;
 		width: 25em;
+
+		@media all and (max-width: 1024px) {
+			height: 5em;
+			width: 10em;
+		}
 	}
 
 	#address {
+		margin: 0;
 		font-size: 0.7em;
 	}
 
 	#map {
-		width: 560px;
-		height: 400px;
+		width: 1200px;
+		height: 600px;
 		padding: 0;
 		margin: 0;
+
+		@media all and (max-width: 1024px) {
+			width: 95vw;
+		}
 	}
 
-	#contacts-block {
+	#contacts-container {
 		display: grid;
 		justify-items: center;
 		grid-template-columns: 1fr 1fr;
+
+		@media all and (max-width: 1024px) {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
 	}
 
-	#contacts-block :global(.links a) {
+	#contacts-container :global(.links a) {
 		min-width: 2em;
 		min-height: 80px;
 	}
 
-	@media all and (max-width: 1024px) {
-		#main-logo {
-			height: 5em;
-			width: 10em;
-		}
+	.contact {
+		padding: 1rem;
+		font-size: 0.7em;
+	}
 
-		#contacts-block {
-			display: grid;
-			grid-template-columns: 1fr;
-		}
+	a.contact {
+		color: white;
 
-		#map {
-			width: 95vw;
+		&:hover {
+			color: #990e0e;
 		}
+	}
+
+	#contacts-links {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 </style>
