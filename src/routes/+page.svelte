@@ -102,13 +102,13 @@
 	}
 
 	#map {
-		width: 1200px;
+		width: 1000px;
 		height: 600px;
 		padding: 0;
 		margin: 0;
 
 		@media all and (max-width: 1024px) {
-			width: 95vw;
+			width: 85vw;
 		}
 	}
 
