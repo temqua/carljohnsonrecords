@@ -7,28 +7,30 @@
 	<p>* Instagram — проект Meta Platforms Inc., деятельность которой в России запрещена.</p>
 </footer>
 
-<style>
+<style lang="scss">
 	footer {
 		padding-bottom: 1em;
 		font-size: 0.6em;
 		text-align: center;
 		background-color: black;
 		color: white;
-	}
 
-	footer p {
-		background-color: black;
-	}
+		p {
+			background-color: black;
+		}
 
-	footer a:hover,
-	footer a:focus,
-	footer a:visited:hover,
-	footer a:visited:focus {
-		color: white;
-	}
+		a {
+			&:hover,
+			&:focus,
+			&:visited:hover,
+			&:visited:focus {
+				color: white;
+			}
 
-	footer a:link,
-	footer a:visited {
-		color: #c41111;
+			&:link,
+			&:visited {
+				color: #c41111;
+			}
+		}
 	}
 </style>

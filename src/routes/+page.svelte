@@ -1,22 +1,16 @@
 <script lang="ts">
-	import type { Price } from '../models/price';
-	import type { General } from '../models/general';
-	import Links from './Links.svelte';
-	import Prices from './Prices.svelte';
-	import type { PageData } from './$types';
-	export let data: PageData;
-	const general: General = data.general;
-	const prices: Price[] = general?.prices;
+	import Links from '$lib/components/Links.svelte';
+	import Services from '$lib/components/Services.svelte';
 </script>
 
 <section id="main">
 	<div id="main-logo" />
 	<a class="text-center" href="#contacts">
-		<button>{general?.buttonText ?? 'Связаться'}</button>
+		<button>Связаться</button>
 	</a>
 </section>
 <section id="studio" class="text-justify">
-	<h1>{general?.headers?.studio ?? 'О студии'}</h1>
+	<h1>О студии</h1>
 	<p>
 		&emsp; CARL JOHNSON RECORDS это студия звукозаписи и репетиционная база, созданная в 2022 году
 		оказывающая полный цикл услуг, помогающих воплотить в жизнь творческие идеи в любом жанре.
@@ -37,9 +31,9 @@
 		получают качественный и читаемый звук.
 	</p>
 </section>
-<Prices {prices} header={general?.headers?.prices} />
+<Services />
 <section id="contacts">
-	<h1>{general?.headers?.contacts ?? 'контакты'}</h1>
+	<h1>Контакты</h1>
 	<div id="contacts-block">
 		<div>
 			<iframe
@@ -51,12 +45,12 @@
 		</div>
 		<div>
 			<h2 id="address" class="uppercase text-center">г. Рязань, ул. Полевая, д.58</h2>
-			<Links links={general?.links} />
+			<Links />
 		</div>
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	#main {
 		display: flex;
 		justify-content: space-around;
@@ -69,6 +63,10 @@
 		background-repeat: no-repeat;
 		min-height: 92vh;
 		width: 100%;
+
+		@media all and (max-width: 1024px) {
+			min-height: 70vh;
+		}
 	}
 
 	#main-logo {
@@ -85,15 +83,10 @@
 	}
 
 	#map {
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		margin: 0;
-	}
-
-	#map {
 		width: 560px;
 		height: 400px;
+		padding: 0;
+		margin: 0;
 	}
 
 	#contacts-block {
@@ -111,10 +104,6 @@
 		#main-logo {
 			height: 5em;
 			width: 10em;
-		}
-
-		#main {
-			min-height: 70vh;
 		}
 
 		#contacts-block {

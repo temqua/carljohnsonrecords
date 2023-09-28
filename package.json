@@ -18,34 +18,32 @@
 		"type": "git",
 		"url": "git+https://github.com/temqua/carljohnsonrecords.git"
 	},
-	"author": "",
+	"author": "Artem Nazarov https://temqua.github.io",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/temqua/carljohnsonrecords/issues"
 	},
 	"homepage": "https://github.com/temqua/carljohnsonrecords#readme",
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^2.0.1",
-		"@sveltejs/kit": "^1.5.0",
-		"@typescript-eslint/eslint-plugin": "^5.45.0",
-		"@typescript-eslint/parser": "^5.45.0",
-		"autoprefixer": "^10.4.13",
-		"cssnano": "^5.1.15",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"postcss": "^8.4.21",
-		"postcss-cli": "^10.1.0",
-		"prettier": "^2.8.0",
-		"prettier-plugin-svelte": "^2.8.1",
-		"serve": "^14.2.0",
-		"svelte": "^3.54.0",
-		"svelte-check": "^3.0.1",
-		"tslib": "^2.4.1",
-		"typescript": "^4.9.3",
-		"vite": "^4.0.0"
-	},
-	"dependencies": {
-		"mongodb": "^5.1.0"
+		"@sveltejs/adapter-static": "2.0.3",
+		"@sveltejs/kit": "1.25.1",
+		"@typescript-eslint/eslint-plugin": "6.7.3",
+		"@typescript-eslint/parser": "6.7.3",
+		"autoprefixer": "10.4.16",
+		"cssnano": "6.0.1",
+		"eslint": "8.50.0",
+		"eslint-config-prettier": "9.0.0",
+		"eslint-plugin-svelte": "2.33.2",
+		"postcss": "8.4.30",
+		"postcss-cli": "10.1.0",
+		"prettier": "3.0.3",
+		"prettier-plugin-svelte": "3.0.3",
+		"sass": "^1.68.0",
+		"serve": "14.2.1",
+		"svelte": "4.2.1",
+		"svelte-check": "3.5.2",
+		"tslib": "2.6.2",
+		"typescript": "5.2.2",
+		"vite": "4.4.9"
 	}
 }

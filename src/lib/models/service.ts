@@ -1,5 +1,4 @@
-export interface Price { 
-    price: number,
+export interface Service { 
     title: string,
     src: string,
     alt: string
