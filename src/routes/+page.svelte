@@ -9,8 +9,8 @@
 		<img src="/arrow-down.svg" alt="" />
 	</a>
 </section>
-<section id="studio" class="text-justify">
-	<h1>О студии</h1>
+<section id="studio">
+	<h1>О нас</h1>
 	<p>
 		&emsp; CARL JOHNSON RECORDS это студия звукозаписи и репетиционная база, созданная в 2022 году
 		оказывающая полный цикл услуг, помогающих воплотить в жизнь творческие идеи в любом жанре.
@@ -46,14 +46,14 @@
 		<div id="contacts-links">
 			<h1 id="address" class="contact uppercase text-center">г. Рязань, ул. Полевая, д.58</h1>
 			<Links />
-			<div>
-				<a href="tel:+79155938587" class="contact uppercase text-cetner">+7 915 593 85 87</a>
+			<div class="contact">
+				<a href="tel:+79155938587" class="uppercase text-cetner">+7 915 593 85 87</a>
 			</div>
-			<div>
-				<a href="tel:+79537372555" class="contact uppercase text-cetner">+7 953 737 25 55</a>
+			<div class="contact">
+				<a href="tel:+79537372555" class="uppercase text-cetner">+7 953 737 25 55</a>
 			</div>
-			<div>
-				<a href="mailto:cj.rec@ya.ru" class="contact uppercase text-cetner">cj.rec@ya.ru</a>
+			<div class="contact">
+				<a href="mailto:cj.rec@ya.ru" class="uppercase text-cetner">cj.rec@ya.ru</a>
 			</div>
 		</div>
 	</div>
@@ -129,11 +129,11 @@
 	}
 
 	.contact {
-		padding: 1rem;
-		font-size: 0.7em;
+		padding: 0.7rem;
+		font-size: 0.9em;
 	}
 
-	a.contact {
+	.contact a {
 		color: white;
 
 		&:hover {
