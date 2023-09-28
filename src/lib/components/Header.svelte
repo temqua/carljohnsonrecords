@@ -34,7 +34,7 @@
 	}
 
 	nav {
-		display: flex;
+		display: none;
 		justify-content: space-between;
 		align-items: center;
 		background-color: black;
@@ -51,10 +51,8 @@
 			}
 		}
 
-		@media all and (max-width: 1024px) {
-			grid-template-columns: 1fr;
-			justify-items: center;
-			padding-top: 0.5em;
+		@media all and (min-width: 1024px) {
+			display: flex;
 		}
 	}
 </style>

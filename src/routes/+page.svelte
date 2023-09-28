@@ -5,7 +5,7 @@
 
 <section id="main">
 	<div id="main-logo" />
-	<a class="text-center" href="#contacts">
+	<a id="scroll_bottom" class="text-center" href="#contacts">
 		<img src="/arrow-down.svg" alt="" />
 	</a>
 </section>
@@ -141,5 +141,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	#scroll_bottom {
+		display: none;
+
+		@media all and (min-width: 1024px) {
+			display: block;
+			position: absolute;
+			bottom: 3rem;
+		}
 	}
 </style>
