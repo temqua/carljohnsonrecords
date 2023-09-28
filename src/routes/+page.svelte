@@ -67,7 +67,7 @@
 		flex-direction: column;
 		padding-top: 0.5em;
 		background-image: linear-gradient(359.17deg, #000000 0.74%, rgba(0, 0, 0, 0.16) 99.32%),
-			url('/logo1.png');
+			url('/logo.png');
 		background-size: 100%;
 		background-repeat: no-repeat;
 		min-height: 92vh;
