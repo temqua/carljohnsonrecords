@@ -67,11 +67,15 @@
 		flex-direction: column;
 		padding-top: 0.5em;
 		background-image: linear-gradient(359.17deg, #000000 0.74%, rgba(0, 0, 0, 0.16) 99.32%),
-			url('/logo.png');
+			url('/logo1.png');
 		background-size: 100%;
 		background-repeat: no-repeat;
 		min-height: 92vh;
 		width: 100%;
+
+		@media all and (min-width: 1024px) {
+			background-image: url('/logo.png');
+		}
 
 		@media all and (max-width: 1024px) {
 			min-height: 70vh;
@@ -87,8 +91,8 @@
 		width: 25em;
 
 		@media all and (max-width: 1024px) {
-			height: 5em;
-			width: 10em;
+			height: 100vh;
+			width: 80vw;
 		}
 	}
 
