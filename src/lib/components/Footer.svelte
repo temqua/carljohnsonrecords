@@ -24,7 +24,7 @@
 			&:focus,
 			&:visited:hover,
 			&:visited:focus {
-				color: white;
+				color: white !important;
 			}
 
 			&:link,
