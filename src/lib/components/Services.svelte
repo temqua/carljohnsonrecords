@@ -70,7 +70,7 @@
 		}
 
 		@media all and (max-width: 1024px) {
-			padding: 0;
+			padding: 0 0 0.5rem;
 		}
 	}
 </style>
