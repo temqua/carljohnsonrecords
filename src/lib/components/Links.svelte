@@ -1,6 +1,6 @@
 <div class="links">
 	<a target="_blank" rel="noreferrer" href="https://vk.com/cj_rec" class="vk-link" />
-	<a target="_blank" rel="noreferrer" href="https://t.me/grawler" class="tg-link" />
+	<a target="_blank" rel="noreferrer" href="https://t.me/cjrecbooking_bot" class="tg-link" />
 	<a target="_blank" rel="noreferrer" href="https://instagram.com/cj_rec" class="insta-link"></a>
 	<span class="insta-remark">*</span>
 </div>
