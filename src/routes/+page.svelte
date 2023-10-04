@@ -155,7 +155,9 @@
 	}
 
 	#studio-content {
-		padding: 0 5rem;
+		@media (min-width: 1024px) {
+			padding: 0 5rem;
+		}
 	}
 
 	#scroll_bottom {
