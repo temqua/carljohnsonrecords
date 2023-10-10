@@ -4,3 +4,6 @@ deploy:
 
 delete:
 	docker-compose down -v
+
+restart:
+	docker-compose restart
