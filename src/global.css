@@ -50,29 +50,6 @@ a:visited:focus {
 	transition: 0.8s;
 }
 
-button {
-	height: 3em;
-	padding: 0.5em 2em;
-	border: 0;
-	border-radius: 5em;
-	font-size: 1em;
-	background: linear-gradient(360deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%), #990e0e;
-	color: white;
-	text-transform: uppercase;
-	cursor: pointer;
-}
-
-button:hover,
-button:focus {
-	background: linear-gradient(360deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%), #7a0c0c;
-	transition: 0.4s;
-}
-
-button:active {
-	background: linear-gradient(360deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%), #550707;
-	transition: 0.4s;
-}
-
 section > h1 {
 	text-align: center;
 	font-size: 1.5em;
@@ -82,7 +59,7 @@ section > h1 {
 }
 
 section {
-	padding: 1em;
+	padding: 1em 5rem;
 }
 
 @media all and (max-width: 1024px) {

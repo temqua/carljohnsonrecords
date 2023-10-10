@@ -10,7 +10,7 @@
 </script>
 
 <section id="studio">
-	<h1>О нас</h1>
+	<h1>О нашей студии</h1>
 	<div class="studio-container">
 		<div class="studio-content">
 			<p>
@@ -53,7 +53,6 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		@media (min-width: 1024px) {
-			padding: 0 5rem;
 			column-gap: 1.5rem;
 			grid-template-columns: 3fr 2fr;
 		}
