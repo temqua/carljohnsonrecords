@@ -55,7 +55,7 @@
 		@media (min-width: 1024px) {
 			text-align: justify;
 			column-gap: 4rem;
-			grid-template-columns: 3fr 2fr;
+			grid-template-columns: 2fr 1fr;
 		}
 	}
 
