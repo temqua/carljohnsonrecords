@@ -53,7 +53,8 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		@media (min-width: 1024px) {
-			column-gap: 1.5rem;
+			text-align: justify;
+			column-gap: 4rem;
 			grid-template-columns: 3fr 2fr;
 		}
 	}
@@ -63,7 +64,9 @@
 		grid-template-columns: 1fr 1fr;
 		column-gap: 1rem;
 		row-gap: 1rem;
+		height: 25rem;
 		@media (min-width: 1024px) {
+			height: 100%;
 			grid-template-columns: 1fr;
 		}
 		@media (min-width: 1400px) {

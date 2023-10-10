@@ -153,11 +153,19 @@
 	.service {
 		display: grid;
 		grid-template-columns: 1fr;
+		text-transform: initial;
 		@media all and (min-width: 1024px) {
 			grid-template-columns: 1fr 1fr;
 		}
 	}
+
 	.photo {
+		img {
+			width: 100%;
+			@media all and (min-width: 1024px) {
+				width: 17rem;
+			}
+		}
 		@media all and (min-width: 1024px) {
 			justify-self: end;
 		}
