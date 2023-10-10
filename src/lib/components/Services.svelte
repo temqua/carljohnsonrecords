@@ -139,6 +139,22 @@
 </section>
 
 <style lang="scss">
+	section {
+		margin: 1em;
+	}
+
+	@media all and (min-width: 1024px) {
+		section {
+			margin: 1em 12rem;
+		}
+	}
+
+	@media all and (min-width: 1400px) {
+		section {
+			margin: 1em 6rem;
+		}
+	}
+
 	#services {
 		display: grid;
 		grid-template-columns: 1fr;

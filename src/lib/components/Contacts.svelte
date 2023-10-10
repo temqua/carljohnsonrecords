@@ -5,6 +5,14 @@
 <section id="contacts">
 	<h1>Контакты</h1>
 	<div id="contacts-container">
+		<div class="map">
+			<iframe
+				id="map"
+				src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=226912412712"
+				frameborder="0"
+				title="map"
+			/>
+		</div>
 		<div id="contacts-links">
 			<h1 id="address" class="contact uppercase text-center">г. Рязань, ул. Полевая, д.58</h1>
 			<Links />
@@ -17,14 +25,6 @@
 			<div class="contact">
 				<a href="mailto:cj.rec@ya.ru" class="uppercase text-cetner">cj.rec@ya.ru</a>
 			</div>
-		</div>
-		<div class="map">
-			<iframe
-				id="map"
-				src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=226912412712"
-				frameborder="0"
-				title="map"
-			/>
 		</div>
 	</div>
 </section>
@@ -49,16 +49,11 @@
 		}
 	}
 
-	.map {
-		@media all and (min-width: 1024px) {
-			width: 100%;
-		}
-	}
-
 	#contacts-container {
 		display: grid;
 		justify-items: center;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
+		row-gap: 1em;
 
 		@media all and (max-width: 1024px) {
 			display: grid;
