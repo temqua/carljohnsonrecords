@@ -7,7 +7,7 @@
 	<h1>Услуги</h1>
 	<div id="services">
 		<Accordion>
-			<span slot="head">Запись песни</span>
+			<span slot="head"><h1>Запись песни</h1></span>
 			<span slot="subheader">1 ЧАС РАБОТЫ СО ЗВУКОРЕЖИССЕРОМ : 900₽</span>
 			<div slot="details" class="service">
 				<div>
@@ -25,9 +25,9 @@
 			</div>
 		</Accordion>
 		<Accordion>
-			<span slot="head">Сведение</span>
-			<span slot="subheader">
-				<p>STEM МАСТЕРИНГ: от 2500₽</p>
+			<span slot="head"><h1>Сведение</h1></span>
+			<span slot="subheader"
+				>STEM МАСТЕРИНГ: от 2500₽
 				<p>МАСТЕРИНГ ОДНОЙ ДОРОЖКИ: от 2000₽</p>
 			</span>
 			<div slot="details" class="service">
@@ -47,14 +47,14 @@
 			</div>
 		</Accordion>
 		<Accordion>
-			<span slot="head">Мастеринг</span>
+			<span slot="head"><h1>Мастеринг</h1></span>
 			<span slot="subheader">СВЕДЕНИЕ ИНСТРУМЕНТАЛА И ГОЛОСА: от 3000₽</span>
 			<div slot="details" class="service">
 				<div>
 					<ul>
 						<li>Финализация песни под стандарты музыкальных площадок</li>
 						<li>Исправление возможных ошибок сведения</li>
-						<li>Свежий взгляд</li>
+						<li>Свежий взгляд на ваш трек</li>
 					</ul>
 				</div>
 				<div class="photo">
@@ -63,7 +63,7 @@
 			</div>
 		</Accordion>
 		<Accordion>
-			<span slot="head">Аранжировка/бит</span>
+			<span slot="head"><h1>Аранжировка/бит</h1></span>
 			<span slot="subheader">НАПИСАНИЕ АРАНЖИРОВКИ: от 6000₽</span>
 			<div slot="details" class="service">
 				<div>
@@ -79,7 +79,7 @@
 			</div>
 		</Accordion>
 		<Accordion>
-			<span slot="head">Подарочная песня</span>
+			<span slot="head"><h1>Подарочная песня</h1></span>
 			<span slot="subheader">ЗАПИСЬ ПЕСНИ-ПОДАРКА: от 4000₽</span>
 			<div slot="details" class="service">
 				<div>
@@ -97,7 +97,7 @@
 			</div>
 		</Accordion>
 		<Accordion>
-			<span slot="head">Проведение репетиций</span>
+			<span slot="head"><h1>Проведение репетиций</h1></span>
 			<span slot="subheader">ПРОВЕДЕНИЕ РЕПЕТИЦИЙ ГРУППЫ ИЛИ СОЛО: 400₽/ЧАС</span>
 			<div slot="details" class="service">
 				<div>
@@ -114,9 +114,9 @@
 			</div>
 		</Accordion>
 		<Accordion>
-			<span slot="head">Аренда студии</span>
-			<span slot="subheader"
-				><p>АРЕНДА СТУДИИ БЕЗ ЗВУКОРЕЖИССЕРА</p>
+			<span slot="head"><h1>Аренда студии</h1></span>
+			<span slot="subheader">
+				<p>АРЕНДА СТУДИИ БЕЗ ЗВУКОРЕЖИССЕРА</p>
 				<p>2 ЧАСА: 1400₽, 4 ЧАСА: 2500₽, НОЧЬ: 5000₽</p>
 			</span>
 			<div slot="details" class="service">
@@ -157,10 +157,9 @@
 			grid-template-columns: 1fr 1fr;
 		}
 	}
-
 	.photo {
-		justify-self: end;
-		background-size: 100%;
-		background-repeat: no-repeat;
+		@media all and (min-width: 1024px) {
+			justify-self: end;
+		}
 	}
 </style>
