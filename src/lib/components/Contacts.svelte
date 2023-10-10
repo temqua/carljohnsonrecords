@@ -18,7 +18,7 @@
 				<a href="mailto:cj.rec@ya.ru" class="uppercase text-cetner">cj.rec@ya.ru</a>
 			</div>
 		</div>
-		<div>
+		<div class="map">
 			<iframe
 				id="map"
 				src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=226912412712"
@@ -30,6 +30,9 @@
 </section>
 
 <style lang="scss">
+	section {
+		padding: 1em;
+	}
 	#address {
 		margin: 0;
 		font-size: 0.7em;
@@ -43,6 +46,12 @@
 
 		@media all and (max-width: 1024px) {
 			width: 85vw;
+		}
+	}
+
+	.map {
+		@media all and (min-width: 1024px) {
+			width: 100%;
 		}
 	}
 

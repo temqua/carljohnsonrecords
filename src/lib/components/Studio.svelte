@@ -13,10 +13,8 @@
 	<h1>О нашей студии</h1>
 	<div class="studio-container">
 		<div class="studio-content">
-			<p>
-				&emsp;Вы ищете студию звукозаписи, чтобы превратить свои музыкальные идеи в профессиональные
-				треки? Мы приглашаем вас в нашу студию звукозаписи!
-			</p>
+			&emsp;Вы ищете студию звукозаписи, чтобы превратить свои музыкальные идеи в профессиональные
+			треки? Мы приглашаем вас в нашу студию звукозаписи!
 			<p>
 				&emsp;Наша студия оборудована современными технологиями и профессиональным звуковым
 				оборудованием, чтобы исключительно точно передать ваше творчество и достичь идеального
@@ -42,7 +40,9 @@
 		</div>
 		<div class="photos">
 			{#each photos as photo}
-				<div class="photo" style="background-image: url({photo})"></div>
+				<div class="photo">
+					<img src={photo} alt="CARL JOHNSON RECORDS | Студия в г. Рязань" />
+				</div>
 			{/each}
 		</div>
 	</div>
@@ -64,9 +64,10 @@
 		grid-template-columns: 1fr 1fr;
 		column-gap: 1rem;
 		row-gap: 1rem;
-		height: 25rem;
+		@media (min-width: 768px) and (max-width: 1024px) {
+			grid-template-columns: 1fr 1fr;
+		}
 		@media (min-width: 1024px) {
-			height: 100%;
 			grid-template-columns: 1fr;
 		}
 		@media (min-width: 1400px) {
@@ -75,7 +76,9 @@
 	}
 
 	.photo {
-		background-size: 100%;
-		background-repeat: no-repeat;
+		img {
+			height: 100%;
+			width: 100%;
+		}
 	}
 </style>
