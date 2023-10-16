@@ -26,6 +26,23 @@
 		</Accordion>
 		<Accordion>
 			<span slot="head"><h1>Сведение</h1></span>
+			<span slot="subheader">СВЕДЕНИЕ ИНСТРУМЕНТАЛА И ГОЛОСА: от 3000₽</span>
+
+			<div slot="details" class="service">
+				<div>
+					<ul>
+						<li>Финализация песни под стандарты музыкальных площадок</li>
+						<li>Исправление возможных ошибок сведения</li>
+						<li>Свежий взгляд на ваш трек</li>
+					</ul>
+				</div>
+				<div class="photo">
+					<img src="mixing.png" alt="CARL JOHNSON RECORDS | Студия в г. Рязань" />
+				</div>
+			</div>
+		</Accordion>
+		<Accordion>
+			<span slot="head"><h1>Мастеринг</h1></span>
 			<span slot="subheader"
 				>STEM МАСТЕРИНГ: от 2500₽
 				<p>МАСТЕРИНГ ОДНОЙ ДОРОЖКИ: от 2000₽</p>
@@ -39,22 +56,6 @@
 						<li>Динамическая обработка</li>
 						<li>Пространственная обработка</li>
 						<li>Мастеринг</li>
-					</ul>
-				</div>
-				<div class="photo">
-					<img src="mixing.png" alt="CARL JOHNSON RECORDS | Студия в г. Рязань" />
-				</div>
-			</div>
-		</Accordion>
-		<Accordion>
-			<span slot="head"><h1>Мастеринг</h1></span>
-			<span slot="subheader">СВЕДЕНИЕ ИНСТРУМЕНТАЛА И ГОЛОСА: от 3000₽</span>
-			<div slot="details" class="service">
-				<div>
-					<ul>
-						<li>Финализация песни под стандарты музыкальных площадок</li>
-						<li>Исправление возможных ошибок сведения</li>
-						<li>Свежий взгляд на ваш трек</li>
 					</ul>
 				</div>
 				<div class="photo">
@@ -141,17 +142,9 @@
 <style lang="scss">
 	section {
 		margin: 1em;
-	}
 
-	@media all and (min-width: 1024px) {
-		section {
+		@media all and (min-width: 1024px) {
 			margin: 1em 12rem;
-		}
-	}
-
-	@media all and (min-width: 1400px) {
-		section {
-			margin: 1em 6rem;
 		}
 	}
 
@@ -177,8 +170,9 @@
 
 	.photo {
 		img {
-			width: 100%;
+			display: none;
 			@media all and (min-width: 1024px) {
+				display: block;
 				width: 17rem;
 			}
 		}
